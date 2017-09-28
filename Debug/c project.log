@@ -1,8 +1,9 @@
 ﻿  time.cpp
-c:\users\user\documents\visual studio 2015\projects\c project\time.cpp(8): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+c:\users\user\documents\visual studio 2015\projects\c project\c-programming-proj\time.cpp(8): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
   stdafx.cpp
   calculations.cpp
   c project.cpp
   Generating Code...
-  c project.vcxproj -> C:\Users\user\Documents\Visual Studio 2015\Projects\c project\Debug\c project.exe
-  c project.vcxproj -> C:\Users\user\Documents\Visual Studio 2015\Projects\c project\Debug\c project.pdb (Full PDB)
+  LINK : C:\Users\user\Documents\Visual Studio 2015\Projects\c project\C-Programming-Proj\Debug\c project.exe not found or not built by the last incremental link; performing full link
+  c project.vcxproj -> C:\Users\user\Documents\Visual Studio 2015\Projects\c project\C-Programming-Proj\Debug\c project.exe
+  c project.vcxproj -> C:\Users\user\Documents\Visual Studio 2015\Projects\c project\C-Programming-Proj\Debug\c project.pdb (Full PDB)
