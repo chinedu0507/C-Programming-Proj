@@ -27,8 +27,6 @@ int main()
 	double apartment2Usage[SIZE] = APARTMENT2_USAGES;
 	double apartment3Usage[SIZE] = APARTMENT3_USAGES;
 
-	puts("just adding this to test cloning");
-
 	// Menu
 	puts("\nRP143 Water Calculator");
 	puts("1. Print usage patter for apartment");
