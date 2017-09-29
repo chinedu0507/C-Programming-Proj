@@ -5,6 +5,8 @@
  *      Author: Luke Skywalker
  */
 
+#include "apartments.h"
+
 #ifndef FILEHANDLING_H_
 #define FILEHANDLING_H_
 
