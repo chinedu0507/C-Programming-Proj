@@ -50,5 +50,8 @@
     <ClCompile Include="time.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="fileHandling.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

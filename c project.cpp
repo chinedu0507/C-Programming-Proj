@@ -6,8 +6,9 @@
 #include "time.h"
 #include "apartments.h"
 #include "calculations.h"
-#include "week1Usages.h"
+#include "fileHandling.h"
 
+#define _CRT_SECURE_NO_WARNINGS
 #define SIZE 720
 void printApartmentReport(double waterUsage[], ApartmentData data);
 
@@ -20,15 +21,14 @@ int main()
 //	setbuf(stdout, 0);
 
 	// Occupants data
-	ApartmentData AptOne = { "JP", "Duminy", 5.14 };
-	ApartmentData AptTwo = { "Imran", "Tahir", 16.88 };
-	ApartmentData AptThree = { "Sunette", "Loubser", 5.04 };
-	double apartment1Usage[SIZE] = APARTMENT1_USAGES;
-	double apartment2Usage[SIZE] = APARTMENT2_USAGES;
-	double apartment3Usage[SIZE] = APARTMENT3_USAGES;
+	ApartmentData *apt1;
+	ApartmentData *apt2;
+	ApartmentData *apt3;
+
+	readMetadataFromFile(&apt1, &apt2, &apt3);
 
 	// Menu
-	puts("\nRP143 Water Calculator");
+	/*puts("\nRP143 Water Calculator");
 	puts("1. Print usage patter for apartment");
 	puts("2. Calculate and print total usage for apartment (in kl)");
 	puts("3. Calculate and print total bill for apartment (in R)");
@@ -148,7 +148,7 @@ int main()
 		scanf_s(" %d", &option);
 	} 
 
-	return 0;
+	return 0;*/
 }
 
 void printApartmentReport(double waterUsage[], ApartmentData data)
