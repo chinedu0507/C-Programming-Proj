@@ -14,7 +14,7 @@ void readMetadataFromFile(ApartmentData *data1, ApartmentData *data2, ApartmentD
 	}
 	else { // Read names and tariffs from file
 		printf("%-6s%-8s%s\n", "Name", "Surname", "Tariff");
-		fscanf(aptPtr, "%7s%7s%3.2lf", &data1->ownerName, &data1->ownerSurname, &data1->tariff);
+		fscanf(aptPtr, "%7s%7s%3.2lf\n", &data1->ownerName, &data1->ownerSurname, &data1->tariff);
 		printf("%s %s %.2lf", &data1->ownerName, &data1->ownerSurname, &data1->tariff);
 
 		/*while (!feof(aptPtr)) // while not at the end of the file
