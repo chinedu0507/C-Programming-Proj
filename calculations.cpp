@@ -27,3 +27,30 @@ double getTotalBill(double waterUsage[], double tariff)
 
 	return sum*tariff;
 }
+
+int checkForLeak(double waterUsage[])
+{
+	//int j, counter = 4;
+
+	//for()
+
+
+
+
+
+
+
+
+/*	int i, j, counter = 4;
+
+	for (i = 1; i < SIZE; i = i + 24)
+	{
+		for (j = i; j < i + counter; j++)
+		{
+			if (waterUsage[j] != 0)
+				return monthHourToDay(j);
+		}
+	}
+
+	return 0;*/
+}

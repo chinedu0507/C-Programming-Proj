@@ -153,7 +153,9 @@
   <ItemGroup>
     <ClInclude Include="apartments.h" />
     <ClInclude Include="calculations.h" />
+    <ClInclude Include="fileHandling.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="stringHandling.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="time.h" />
     <ClInclude Include="week1Usages.h" />
@@ -163,6 +165,7 @@
     <ClCompile Include="calculations.cpp" />
     <ClCompile Include="fileHandling.c" />
     <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="stringHandling.c" />
     <ClCompile Include="time.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,15 +1,3 @@
-﻿  time.cpp
-c:\users\user\documents\github local\c-programming-proj\time.cpp(8): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-  stdafx.cpp
-  fileHandling.c
-c:\users\user\documents\github local\c-programming-proj\filehandling.c(4): warning C4005: '_CRT_SECURE_NO_WARNINGS': macro redefinition
-  c:\users\user\documents\github local\c-programming-proj\filehandling.c(4): note: command-line arguments:  see previous definition of '_CRT_SECURE_NO_WARNINGS'
-c:\users\user\documents\github local\c-programming-proj\filehandling.c(17): warning C4476: 'fscanf' : unknown type field character '.' in format specifier
-c:\users\user\documents\github local\c-programming-proj\filehandling.c(17): warning C4474: 'fscanf' : too many arguments passed for format string
-  c:\users\user\documents\github local\c-programming-proj\filehandling.c(17): note: placeholders and their parameters expect 2 variadic arguments, but 3 were provided
-c:\users\user\documents\github local\c-programming-proj\filehandling.c(18): warning C4477: 'printf' : format string '%.2lf' requires an argument of type 'double', but variadic argument 3 has type 'double *'
-  calculations.cpp
-  c project.cpp
-  Generating Code...
+﻿  fileHandling.c
   c project.vcxproj -> C:\Users\user\Documents\Github Local\C-Programming-Proj\Debug\c project.exe
   c project.vcxproj -> C:\Users\user\Documents\Github Local\C-Programming-Proj\Debug\c project.pdb (Full PDB)

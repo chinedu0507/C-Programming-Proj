@@ -6,7 +6,7 @@
 #include "time.h"
 #include "apartments.h"
 #include "calculations.h"
-#include "week1Usages.h"
+#include "fileHandling.h"
 
 #define SIZE 720
 void printApartmentReport(double waterUsage[], ApartmentData data);
@@ -17,17 +17,21 @@ int main()
 	int option;
 	int apartment;
 	int i, j, k;
+	char filename[50];
+
 //	setbuf(stdout, 0);
 
 	// Occupants data
-	ApartmentData AptOne = { "JP", "Duminy", 5.14 };
-	ApartmentData AptTwo = { "Imran", "Tahir", 16.88 };
-	ApartmentData AptThree = { "Sunette", "Loubser", 5.04 };
-	double apartment1Usage[SIZE] = APARTMENT1_USAGES;
-	double apartment2Usage[SIZE] = APARTMENT2_USAGES;
-	double apartment3Usage[SIZE] = APARTMENT3_USAGES;
+	ApartmentData AptOne;
+	ApartmentData AptTwo;
+	ApartmentData AptThree;
+	double apartment1Usage[SIZE];
+	double apartment2Usage[SIZE];
+	double apartment3Usage[SIZE]; 
 
-	puts("just adding this to test cloning");
+	// Reading in data from files
+	readMetadataFromFile(&AptOne, &AptTwo, &AptThree);
+	readUsageFromFile(apartment1Usage, apartment2Usage, apartment3Usage);
 
 	// Menu
 	puts("\nRP143 Water Calculator");
@@ -126,8 +130,29 @@ int main()
 			}
 			break;
 		case 5:
+			if (apartment == 1)
+			{
+				if (checkForLeak(apartment1Usage) == 0)
+					printf("Apartment %d: No leak\n", apartment);
+				else printf("Apartment %d: Leak on day %d\n", apartment, checkForLeak(apartment1Usage));
+			}
+			else if (apartment == 2)
+			{
+				if (checkForLeak(apartment2Usage) == 0)
+					printf("Apartment %d: No leak\n", apartment);
+				else printf("Apartment %d: Leak on day %d\n", apartment, checkForLeak(apartment2Usage));
+			} 
+			else if (apartment == 3)
+			{
+				if (checkForLeak(apartment3Usage) == 0)
+					printf("Apartment %d: No leak\n", apartment);
+				else printf("Apartment %d: Leak on day %d\n", apartment, checkForLeak(apartment3Usage));
+			}
 			break;
 		case 6:
+			printf("Enter a filename: ");
+			scanf(" %s", filename);
+				writeBuildingReport(apartment1Usage, apartment2Usage, apartment3Usage, AptOne, AptTwo, AptThree, filename);
 			break;
 		case 7:
 			break;
@@ -149,7 +174,6 @@ int main()
 		printf("\nChoose an item from the menu: ");
 		scanf_s(" %d", &option);
 	} 
-
 	return 0;
 }
 
