@@ -43,10 +43,11 @@ void readUsageFromFile(double usage1[], double usage2[], double usage3[])
 	}
 	else
 	{
+		// scan the first line of the file into the variable, header
 		fscanf(water_usage, "%s", header);
 		for (i = 0; i < 720; i++)
 		{
-
+			// now the fscanf reads in values
 			fscanf(water_usage, "%s", csvstring);
 			css = csvstring;
 			csvToStrings(css, day, time, uusage1, uusage2, uusage3);
