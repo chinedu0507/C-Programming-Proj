@@ -100,3 +100,48 @@ void writeBuildingReport(double apartment1Usage[], double apartment2Usage[], dou
 	fclose(reportPtr);
 
 }
+
+void saveCompactUsage(double usage[], int apartment)
+{
+	int i;
+	int count = 0;
+	FILE *PtrToBin;
+	char filename[40];
+
+	// Assigning the apartment number to the bin file
+	sprintf(filename, "compact_usage_%d.bin", apartment);
+
+	if ((PtrToBin = fopen(filename, "wb")) == NULL)
+	{
+		puts("Could not open file for writing");
+	}
+	else
+	{
+		for (i = 0; i < 720; i++)
+		{
+			if (usage[i] != 0) // if usage is not equals to zero
+			{
+				// Write to binary file
+				fwrite(&i, sizeof(int), 1, PtrToBin);
+				fwrite(&usage[i], sizeof(double), 1, PtrToBin);
+				count++;
+			}
+		}
+	}
+
+	fclose(PtrToBin);
+
+//	double t;
+//	int d;
+//
+//	FILE *ReadPtr = fopen(filename, "rb");
+
+//	for (i = 0; i < count; i++)
+//	{
+//		fread(&d, sizeof(int), 1, ReadPtr);
+//		fread(&t, sizeof(double), 1, ReadPtr);
+
+//	}
+//	fclose(ReadPtr);
+	
+}

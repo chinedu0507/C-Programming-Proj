@@ -15,6 +15,7 @@ int main()
 {
 	// Program variables
 	int option;
+	int menu_seven;
 	int apartment;
 	int i, j, k;
 	char filename[50];
@@ -154,9 +155,123 @@ int main()
 			scanf(" %s", filename);
 				writeBuildingReport(apartment1Usage, apartment2Usage, apartment3Usage, AptOne, AptTwo, AptThree, filename);
 			break;
-		case 7:
+		case 7: 
+
+			// Binary file
+
+			printf("\nSave(1) or print (2) compact usage file: ");
+			scanf(" %d", &menu_seven);
+			printf("\n");
+
+			if (menu_seven == 1)
+			{
+				if (apartment == 1)
+				{ 
+					saveCompactUsage(apartment1Usage, apartment);
+				}
+
+				if (apartment == 2)
+				{
+					saveCompactUsage(apartment2Usage, apartment);
+				}
+
+				if (apartment == 3)
+				{
+					saveCompactUsage(apartment3Usage, apartment);
+				}
+			}
+
+			else if (menu_seven == 2)
+			{
+				if (apartment == 1)
+				{
+					
+					double usage1; // to save usage not equals 0
+					int i; // index variable
+
+					FILE *ReadPtr;
+					
+					if ((ReadPtr = fopen("compact_usage_1.bin", "rb")) == NULL)
+					{
+						puts("WARNING: Save compact usage to file before printing");
+					}
+
+					else
+					{
+						printf("\Active water usage report:\n");
+
+						while (!feof(ReadPtr))
+						{
+							fread(&i, sizeof(int), 1, ReadPtr);
+							fread(&usage1, sizeof(double), 1, ReadPtr);
+
+							printf("Day %02d %02d:00 : %.3lf kl\n", monthHourToDay(i), monthHourToDailyHour(i), usage1);
+						}
+					}
+					fclose(ReadPtr);
+				}
+
+				if (apartment == 2)
+				{
+					
+					double usage2; // to save usage not equals 0
+					int i; // index variable
+
+					FILE *ReadPtr;
+
+					if ((ReadPtr = fopen("compact_usage_2.bin", "rb")) == NULL)
+					{
+						puts("WARNING: Save compact usage to file before printing");
+					}
+
+					else
+					{
+						printf("\Active water usage report:\n");
+
+						while (!feof(ReadPtr))
+						{
+							fread(&i, sizeof(int), 1, ReadPtr);
+							fread(&usage2, sizeof(double), 1, ReadPtr);
+
+							printf("Day %02d %02d:00 : %.3lf kl\n", monthHourToDay(i), monthHourToDailyHour(i), usage2);
+						}
+					}
+					fclose(ReadPtr);
+				}
+
+				if (apartment == 3)
+				{
+
+					double usage3; // to save usage not equals 0
+					int i; // index variable
+
+					FILE *ReadPtr;
+
+					if ((ReadPtr = fopen("compact_usage_3.bin", "rb")) == NULL)
+					{
+						puts("WARNING: Save compact usage to file before printing");
+					}
+
+					else
+					{
+						printf("\Active water usage report:\n");
+
+						while (!feof(ReadPtr))
+						{
+							fread(&i, sizeof(int), 1, ReadPtr);
+							fread(&usage3, sizeof(double), 1, ReadPtr);
+
+							printf("Day %02d %02d:00 : %.3lf kl\n", monthHourToDay(i), monthHourToDailyHour(i), usage3);
+						}
+					}
+					fclose(ReadPtr);
+				}
+			}
 			break;
 		case 8:
+
+			// Linked Lists
+
 			break;
 		}
 
