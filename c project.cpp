@@ -7,6 +7,7 @@
 #include "apartments.h"
 #include "calculations.h"
 #include "fileHandling.h"
+#include "linkedLists.h"
 
 #define SIZE 720
 void printApartmentReport(double waterUsage[], ApartmentData data);
@@ -19,6 +20,7 @@ int main()
 	int apartment;
 	int i, j, k;
 	char filename[50];
+	ListNodePtr startPtr = NULL;
 
 //	setbuf(stdout, 0);
 
@@ -198,7 +200,7 @@ int main()
 
 					else
 					{
-						printf("\Active water usage report:\n");
+						printf("\nActive water usage report:\n");
 
 						while (!feof(ReadPtr))
 						{
@@ -226,7 +228,7 @@ int main()
 
 					else
 					{
-						printf("\Active water usage report:\n");
+						printf("\nActive water usage report:\n");
 
 						while (!feof(ReadPtr))
 						{
@@ -254,7 +256,7 @@ int main()
 
 					else
 					{
-						printf("\Active water usage report:\n");
+						printf("\nActive water usage report:\n");
 
 						while (!feof(ReadPtr))
 						{
@@ -271,6 +273,54 @@ int main()
 		case 8:
 
 			// Linked Lists
+			if (apartment == 1)
+			{
+				//int i;
+
+				for (i = 0; i < SIZE; i++)
+				{
+					if (apartment1Usage[i] != 0)
+					{
+						addNode(&startPtr, i, apartment1Usage[i]);
+					}
+				}
+
+				printList(startPtr);
+			}
+
+			if (apartment == 2)
+			{
+				for (i = 0; i < SIZE; i++)
+				{
+					if (apartment2Usage[i] != 0)
+					{
+						addNode(&startPtr, i, apartment2Usage[i]);
+					}
+				}
+				// play around with the * and & operators
+				// play around with the * and & operators
+				// play around with the * and & operators
+				printList(startPtr);
+			}
+
+			if (apartment == 3)
+			{
+				for (i = 0; i < SIZE; i++)
+				{
+					if (apartment3Usage[i] != 0)
+					{
+						addNode(&startPtr, i, apartment3Usage[i]);
+					}
+				}
+
+				printList(startPtr);
+
+				printf("\nMaximum usage for apartment %d:\n", apartment);
+				j = monthHourOfMaxUsage(startPtr);
+				printf("Day %02d %02d:00 : %.3lf kl\n", monthHourToDay(j), monthHourToDailyHour(j), apartment3Usage[j]);
+
+			}
+			
 
 			break;
 		}

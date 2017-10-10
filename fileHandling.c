@@ -104,7 +104,6 @@ void writeBuildingReport(double apartment1Usage[], double apartment2Usage[], dou
 void saveCompactUsage(double usage[], int apartment)
 {
 	int i;
-	int count = 0;
 	FILE *PtrToBin;
 	char filename[40];
 
@@ -124,24 +123,10 @@ void saveCompactUsage(double usage[], int apartment)
 				// Write to binary file
 				fwrite(&i, sizeof(int), 1, PtrToBin);
 				fwrite(&usage[i], sizeof(double), 1, PtrToBin);
-				count++;
 			}
 		}
 	}
 
 	fclose(PtrToBin);
-
-//	double t;
-//	int d;
-//
-//	FILE *ReadPtr = fopen(filename, "rb");
-
-//	for (i = 0; i < count; i++)
-//	{
-//		fread(&d, sizeof(int), 1, ReadPtr);
-//		fread(&t, sizeof(double), 1, ReadPtr);
-
-//	}
-//	fclose(ReadPtr);
 	
 }
